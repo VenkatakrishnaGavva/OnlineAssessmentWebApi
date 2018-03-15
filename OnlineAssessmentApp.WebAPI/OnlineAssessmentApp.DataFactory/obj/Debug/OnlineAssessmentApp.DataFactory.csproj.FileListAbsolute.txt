@@ -1,0 +1,11 @@
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Debug\OnlineAssessmentApp.DataFactory.dll
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Debug\OnlineAssessmentApp.DataFactory.pdb
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Debug\OnlineAssessmentApp.Repository.dll
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Debug\LumenWorks.Framework.IO.dll
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Debug\OnlineAssessmentApp.Repository.pdb
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Debug\LumenWorks.Framework.IO.pdb
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Debug\LumenWorks.Framework.IO.xml
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\obj\Debug\OnlineAssessmentApp.DataFactory.csprojResolveAssemblyReference.cache
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\obj\Debug\OnlineAssessmentApp.DataFactory.csproj.CoreCompileInputs.cache
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\obj\Debug\OnlineAssessmentApp.DataFactory.dll
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\obj\Debug\OnlineAssessmentApp.DataFactory.pdb

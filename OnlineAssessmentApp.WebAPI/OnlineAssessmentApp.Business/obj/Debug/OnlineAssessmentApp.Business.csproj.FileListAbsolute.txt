@@ -1,0 +1,13 @@
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Debug\OnlineAssessmentApp.Business.dll
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Debug\OnlineAssessmentApp.Business.pdb
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Debug\OnlineAssessmentApp.DataFactory.dll
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Debug\OnlineAssessmentApp.Repository.dll
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Debug\LumenWorks.Framework.IO.dll
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Debug\OnlineAssessmentApp.DataFactory.pdb
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Debug\OnlineAssessmentApp.Repository.pdb
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Debug\LumenWorks.Framework.IO.pdb
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Debug\LumenWorks.Framework.IO.xml
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\obj\Debug\OnlineAssessmentApp.Business.csprojResolveAssemblyReference.cache
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\obj\Debug\OnlineAssessmentApp.Business.csproj.CoreCompileInputs.cache
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\obj\Debug\OnlineAssessmentApp.Business.dll
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\obj\Debug\OnlineAssessmentApp.Business.pdb

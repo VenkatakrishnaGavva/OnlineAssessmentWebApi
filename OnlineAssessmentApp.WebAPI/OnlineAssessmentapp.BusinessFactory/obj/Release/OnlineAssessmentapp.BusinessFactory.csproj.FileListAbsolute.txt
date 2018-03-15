@@ -1,0 +1,15 @@
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentapp.BusinessFactory\bin\Release\OnlineAssessmentapp.BusinessFactory.dll
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentapp.BusinessFactory\bin\Release\OnlineAssessmentapp.BusinessFactory.pdb
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentapp.BusinessFactory\bin\Release\OnlineAssessmentApp.Business.dll
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentapp.BusinessFactory\bin\Release\OnlineAssessmentApp.Repository.dll
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentapp.BusinessFactory\bin\Release\OnlineAssessmentApp.DataFactory.dll
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentapp.BusinessFactory\bin\Release\LumenWorks.Framework.IO.dll
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentapp.BusinessFactory\bin\Release\OnlineAssessmentApp.Business.pdb
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentapp.BusinessFactory\bin\Release\OnlineAssessmentApp.Repository.pdb
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentapp.BusinessFactory\bin\Release\OnlineAssessmentApp.DataFactory.pdb
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentapp.BusinessFactory\bin\Release\LumenWorks.Framework.IO.pdb
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentapp.BusinessFactory\bin\Release\LumenWorks.Framework.IO.xml
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentapp.BusinessFactory\obj\Release\OnlineAssessmentapp.BusinessFactory.csprojResolveAssemblyReference.cache
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentapp.BusinessFactory\obj\Release\OnlineAssessmentapp.BusinessFactory.csproj.CoreCompileInputs.cache
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentapp.BusinessFactory\obj\Release\OnlineAssessmentapp.BusinessFactory.dll
+C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentapp.BusinessFactory\obj\Release\OnlineAssessmentapp.BusinessFactory.pdb
