@@ -11,3 +11,16 @@ C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessment
 C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\obj\Release\OnlineAssessmentApp.Business.csproj.CoreCompileInputs.cache
 C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\obj\Release\OnlineAssessmentApp.Business.dll
 C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\obj\Release\OnlineAssessmentApp.Business.pdb
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Release\OnlineAssessmentApp.Business.dll
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Release\OnlineAssessmentApp.Business.pdb
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Release\OnlineAssessmentApp.DataFactory.dll
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Release\OnlineAssessmentApp.Repository.dll
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Release\LumenWorks.Framework.IO.dll
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Release\OnlineAssessmentApp.DataFactory.pdb
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Release\OnlineAssessmentApp.Repository.pdb
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Release\LumenWorks.Framework.IO.pdb
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Release\LumenWorks.Framework.IO.xml
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\obj\Release\OnlineAssessmentApp.Business.csprojResolveAssemblyReference.cache
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\obj\Release\OnlineAssessmentApp.Business.csproj.CoreCompileInputs.cache
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\obj\Release\OnlineAssessmentApp.Business.dll
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\obj\Release\OnlineAssessmentApp.Business.pdb

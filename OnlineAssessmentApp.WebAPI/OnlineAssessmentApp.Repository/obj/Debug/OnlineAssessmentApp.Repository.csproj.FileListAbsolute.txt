@@ -7,3 +7,12 @@ C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessment
 C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Repository\obj\Debug\OnlineAssessmentApp.Repository.dll
 C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Repository\obj\Debug\OnlineAssessmentApp.Repository.pdb
 C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Repository\obj\Debug\OnlineAssessmentApp.Repository.csprojResolveAssemblyReference.cache
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Repository\bin\Debug\OnlineAssessmentApp.Repository.dll
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Repository\bin\Debug\OnlineAssessmentApp.Repository.pdb
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Repository\bin\Debug\LumenWorks.Framework.IO.dll
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Repository\bin\Debug\LumenWorks.Framework.IO.pdb
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Repository\bin\Debug\LumenWorks.Framework.IO.xml
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Repository\obj\Debug\OnlineAssessmentApp.Repository.csprojResolveAssemblyReference.cache
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Repository\obj\Debug\OnlineAssessmentApp.Repository.csproj.CoreCompileInputs.cache
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Repository\obj\Debug\OnlineAssessmentApp.Repository.dll
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Repository\obj\Debug\OnlineAssessmentApp.Repository.pdb

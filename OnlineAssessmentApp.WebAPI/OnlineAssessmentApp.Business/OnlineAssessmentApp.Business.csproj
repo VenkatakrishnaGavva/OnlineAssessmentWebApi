@@ -40,8 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountManagementBusiness.cs" />
+    <Compile Include="Entities\AccountDetailEntity.cs" />
     <Compile Include="Entities\OptionsEntity.cs" />
     <Compile Include="Entities\QuestionEntity.cs" />
+    <Compile Include="Entities\UserEntity.cs" />
+    <Compile Include="IAccountManagementBusiness.cs" />
     <Compile Include="IQuestionPaperBuisness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestionPaperBuisness.cs" />

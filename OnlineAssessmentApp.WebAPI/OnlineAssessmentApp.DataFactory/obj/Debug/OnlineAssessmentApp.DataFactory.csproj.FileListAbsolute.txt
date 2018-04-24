@@ -9,3 +9,14 @@ C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessment
 C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\obj\Debug\OnlineAssessmentApp.DataFactory.csproj.CoreCompileInputs.cache
 C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\obj\Debug\OnlineAssessmentApp.DataFactory.dll
 C:\Web API\OnlineAssessmentAppWebAPI\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\obj\Debug\OnlineAssessmentApp.DataFactory.pdb
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Debug\OnlineAssessmentApp.DataFactory.dll
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Debug\OnlineAssessmentApp.DataFactory.pdb
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Debug\OnlineAssessmentApp.Repository.dll
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Debug\LumenWorks.Framework.IO.dll
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Debug\OnlineAssessmentApp.Repository.pdb
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Debug\LumenWorks.Framework.IO.pdb
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Debug\LumenWorks.Framework.IO.xml
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\obj\Debug\OnlineAssessmentApp.DataFactory.csprojResolveAssemblyReference.cache
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\obj\Debug\OnlineAssessmentApp.DataFactory.csproj.CoreCompileInputs.cache
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\obj\Debug\OnlineAssessmentApp.DataFactory.dll
+E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\obj\Debug\OnlineAssessmentApp.DataFactory.pdb

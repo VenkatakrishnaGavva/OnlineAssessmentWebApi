@@ -25,7 +25,7 @@ namespace OnlineAssessmentApp.Repository
             
             SqlParameter[] paramArray = new SqlParameter[1];
             paramArray[0] = param1;
-            var dt =   objSqlADOHelper.GetData(paramArray);
+            var dt =   objSqlADOHelper.GetData(paramArray,StoredProcedureNameConstants.SPGetQuestionPaper);
             var stringReader = new System.IO.StringReader(Convert.ToString(dt.Rows[0].ItemArray[1]));
             var serializer = new XmlSerializer(typeof(List<QuestionPaperData>));
             listQuestionPaper= serializer.Deserialize(stringReader) as List<QuestionPaperData>;

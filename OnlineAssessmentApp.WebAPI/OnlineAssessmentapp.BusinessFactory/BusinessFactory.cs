@@ -11,6 +11,9 @@ namespace OnlineAssessmentapp.BusinessFactory
         {
             return new QuestionPaperBuisness();
         }
-       
+        public static IAccountManagementBusiness CreateAccountManagementBusinessInstance()
+        {
+            return new AccountManagementBusiness();
+        }
     }
 }

@@ -11,5 +11,9 @@ namespace OnlineAssessmentApp.DataFactory
         {
             return new QuestionPaperDataRepository();
         }
+        public static IAccountManagementRepository CreateAccountmanagementRepositoryInstance()
+        {
+            return new AccountManagementRepository();
+        }
     }
 }

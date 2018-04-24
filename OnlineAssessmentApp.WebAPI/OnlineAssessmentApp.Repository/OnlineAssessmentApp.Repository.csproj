@@ -43,8 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountManagementRepository.cs" />
+    <Compile Include="DataModels\AccountMangementData.cs" />
     <Compile Include="DataModels\OptionsData.cs" />
     <Compile Include="DataModels\QuestionPaperData.cs" />
+    <Compile Include="DataModels\UserData.cs" />
+    <Compile Include="IAccountManagementRepository.cs" />
     <Compile Include="IDatabaseHelper.cs" />
     <Compile Include="IQuestionPaperRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
