@@ -12,6 +12,18 @@ namespace OnlineAssessmentApp.Repository
         bool IsValidUser(AccountDetailsData accountMangementData);
         AccountDetailsData AccountDetails { get; set; }
         bool CreateUser(UserData userData);
+        
+        bool CreateModule(ModuleData moduleData);
+        bool CreateRole(RoleData roleData);
+        List<ModulewisePageAccessData> GetModulewisePermissionList();
+        List<ModuleData> GetAllModules();
+        List<RoleData> GetAllRoles();
+      
+        bool MapModuleWisePageAccessWithRole(List<ModulewisePageAccessData> listModulewisePermissionData);
+        bool UpdateUser(UserData userData);
+        List<UserData> GetAllUsersData();
+      
 
+        List<ModulewisePageAccessData> GetModulewiseMenuAccessForRoleData(int roleId);
     }
 }

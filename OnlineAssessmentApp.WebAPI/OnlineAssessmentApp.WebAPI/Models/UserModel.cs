@@ -7,6 +7,8 @@ namespace OnlineAssessmentApp.WebAPI.Models
 {
     public class UserModel
     {
+        public string FullName { get; set; }
+        public  int UserId { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string EmailAddress { get; set; }
@@ -15,7 +17,7 @@ namespace OnlineAssessmentApp.WebAPI.Models
 
         public int CreatedBy { get; set; }
         public int ModifiedBy { get; set; }
-        public int? RoleId { get; set; }
+        public RoleModel Role { get; set; }
 
     }
 }

@@ -45,8 +45,14 @@
   <ItemGroup>
     <Compile Include="AccountManagementRepository.cs" />
     <Compile Include="DataModels\AccountMangementData.cs" />
+    <Compile Include="DataModels\AssessmentData.cs" />
+    <Compile Include="DataModels\ModuleData.cs" />
+    <Compile Include="DataModels\ModuleWisePageAccessData.cs" />
     <Compile Include="DataModels\OptionsData.cs" />
+    <Compile Include="DataModels\PageData.cs" />
     <Compile Include="DataModels\QuestionPaperData.cs" />
+    <Compile Include="DataModels\QuestionpaperDetails.cs" />
+    <Compile Include="DataModels\RoleData.cs" />
     <Compile Include="DataModels\UserData.cs" />
     <Compile Include="IAccountManagementRepository.cs" />
     <Compile Include="IDatabaseHelper.cs" />

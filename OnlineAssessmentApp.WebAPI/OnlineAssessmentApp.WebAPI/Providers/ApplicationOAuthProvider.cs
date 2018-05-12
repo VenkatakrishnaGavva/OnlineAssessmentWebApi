@@ -63,7 +63,7 @@ namespace OnlineAssessmentApp.WebAPI.Providers
             ClaimsIdentity cookiesIdentity =
             new ClaimsIdentity(context.Options.AuthenticationType);
 
-            AuthenticationProperties properties = CreateProperties(context.UserName, Convert.ToString(accountDetailEntity.UserID));
+            AuthenticationProperties properties = CreateProperties(context.UserName, Convert.ToString(accountDetailEntity.UserID), Convert.ToString(accountDetailEntity.RoleId));
             AuthenticationTicket ticket =
             new AuthenticationTicket(oAuthIdentity, properties);
             context.Validated(ticket);
@@ -110,13 +110,14 @@ namespace OnlineAssessmentApp.WebAPI.Providers
             return Task.FromResult<object>(null);
         }
 
-        public static AuthenticationProperties CreateProperties(string userName,string userid)
+        public static AuthenticationProperties CreateProperties(string userName,string userid,string RoleId)
         {
             IDictionary<string, string>
             data = new Dictionary<string, string>
             {
                 { "userName", userName },
-                { "userid", userid}
+                { "userid", userid},
+                 { "RoleId", RoleId}
 
             };
             return new AuthenticationProperties(data);

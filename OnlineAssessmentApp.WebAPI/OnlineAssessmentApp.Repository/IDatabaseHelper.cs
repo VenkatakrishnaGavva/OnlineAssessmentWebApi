@@ -9,7 +9,7 @@ namespace OnlineAssessmentApp.Repository
 {
     public interface IDatabaseHelper
     {
-        void Save(SqlParameter[] parameterArray);
+   
         DataTable GetData(SqlParameter[] parameterArray,string storedprocedureName);
         void  GetOutputParamValue(SqlParameter[] parameterArray, string storedprocedureName);
 

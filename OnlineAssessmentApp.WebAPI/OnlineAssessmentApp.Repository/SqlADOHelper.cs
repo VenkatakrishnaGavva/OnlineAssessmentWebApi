@@ -87,36 +87,7 @@ namespace OnlineAssessmentApp.Repository
         
         }
 
-        public void Save(SqlParameter[] parameterArray)
-        {
-            SqlConnection con = null;
-            try
-            {
-                // StoredProcedureConstants.SPQuestionPaperUpload
-                con = new SqlConnection(ConnectionString);
-                using (SqlCommand cmd = new SqlCommand())
-                { 
-                    con.Open();
-                cmd.Connection = con;
-                cmd.CommandText = StoredProcedureNameConstants.SPQuestionPaperUpload;
-                for (int i = 0; i < parameterArray.Length; i++)
-                {
-                    cmd.Parameters.Add(parameterArray[i]);
-                }
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.ExecuteNonQuery();
-                    }
-            }
-            catch (Exception ex)
-            {
-
-                
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
+     
 
 
     }

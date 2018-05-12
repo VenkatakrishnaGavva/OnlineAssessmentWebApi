@@ -8,6 +8,8 @@ namespace OnlineAssessmentApp.Repository.DataModels
 {
     public class UserData
     {
+        public int UserId { get; set; }
+        public string Fullname { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string EmailAddress { get; set; }
@@ -16,7 +18,7 @@ namespace OnlineAssessmentApp.Repository.DataModels
 
         public int CreatedBy { get; set; }
         public int ModifiedBy { get; set; }
-        public int? RoleId { get; set; }
+        public RoleData Role { get; set; }
         
 
     }

@@ -42,8 +42,14 @@
   <ItemGroup>
     <Compile Include="AccountManagementBusiness.cs" />
     <Compile Include="Entities\AccountDetailEntity.cs" />
+    <Compile Include="Entities\AssessmentEntity.cs" />
+    <Compile Include="Entities\ModuleEntity.cs" />
+    <Compile Include="Entities\ModuleWisePageAccessEntity.cs" />
     <Compile Include="Entities\OptionsEntity.cs" />
+    <Compile Include="Entities\PageEntity.cs" />
     <Compile Include="Entities\QuestionEntity.cs" />
+    <Compile Include="Entities\QuestionPaperDetailsEntity.cs" />
+    <Compile Include="Entities\RoleEntity.cs" />
     <Compile Include="Entities\UserEntity.cs" />
     <Compile Include="IAccountManagementBusiness.cs" />
     <Compile Include="IQuestionPaperBuisness.cs" />

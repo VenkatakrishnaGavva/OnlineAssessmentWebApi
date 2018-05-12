@@ -8,8 +8,12 @@ namespace OnlineAssessmentApp.Repository
 {
     public interface IQuestionPaperRepository
     {
-        bool QuestionPaperUpload(Stream streamQuestionPaper, string description);
-
+        bool QuestionPaperUpload(Stream streamQuestionPaper, string description, string questionPaperName);
+        List<QuestionpaperDetails> GetAllQuestionPaperDetails();
         List<QuestionPaperData> GetQuestionPaperById(int id);
+
+        bool CreateAssessment(AssessmentData assessmentData);
+        bool MapAnAssessmentToUser(int userId, int assessmentId);
+        List<AssessmentData> GetAllAssessmentDetails();
     }
 }
