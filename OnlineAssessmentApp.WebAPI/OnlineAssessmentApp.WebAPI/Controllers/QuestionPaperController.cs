@@ -43,7 +43,23 @@ namespace OnlineAssessmentApp.WebAPI.Controllers
         {
             try
             {
-                var questionPaper = BusinessFactory.CreateQuestionPaperBusinessInstance().GetQuestionPaperById(userId);
+                var questionPaper = BusinessFactory.CreateQuestionPaperBusinessInstance().GetAssessmentById(userId);
+
+                return Request.CreateResponse(HttpStatusCode.OK, questionPaper);
+            }
+            catch (System.Exception e)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
+            }
+
+
+        }
+        [Route("api/GetAssessmentToEvaluate")]
+        public async Task<HttpResponseMessage> GetAssessmentToEvaluate(int userId, int assessmentid)
+        {
+            try
+            {
+                var questionPaper = BusinessFactory.CreateQuestionPaperBusinessInstance().GetAssessmentForEvaluation(assessmentid, userId);
 
                 return Request.CreateResponse(HttpStatusCode.OK, questionPaper);
             }
@@ -55,6 +71,22 @@ namespace OnlineAssessmentApp.WebAPI.Controllers
 
         }
 
+        [Route("api/GetUsersForAssessmentForEvaluation")]
+        public async Task<HttpResponseMessage> GetUsersForAssessmentForEvaluation(int assessmentId)
+        {
+            try
+            {
+                var users = BusinessFactory.CreateQuestionPaperBusinessInstance().GetUsersForAssessmentForEvaluation(assessmentId);
+
+                return Request.CreateResponse(HttpStatusCode.OK, users);
+            }
+            catch (System.Exception e)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
+            }
+
+
+        }
         [HttpGet]
         [Route("api/GetAllAssessments")]
         public async Task<HttpResponseMessage> GetAllAssessments()
@@ -178,6 +210,60 @@ namespace OnlineAssessmentApp.WebAPI.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
             }
         }
+        [HttpPost]
+        [Route("api/PostAnswerSheet")]
+        public async Task<HttpResponseMessage> PostAnswerSheet(AssessmentResultModel assessmentResultModel)
+        {
+            try
+            {
+
+                AssessmentResultEntity assessmentResultEntity = new AssessmentResultEntity();
+                assessmentResultEntity.UserId = assessmentResultModel.UserId;
+                assessmentResultEntity.AssessmentId = assessmentResultModel.AssessmentId;
+                assessmentResultEntity.QuestionPaperId = assessmentResultModel.QuestionPaperId;
+                assessmentResultEntity.TotalQuestionsCount = assessmentResultModel.TotalQuestionsCount;
+                assessmentResultEntity.RightAnsweredCount = assessmentResultModel.RightAnsweredCount;
+                List<QuestionEntity> listQuestionPaperEntity = new List<QuestionEntity>();
+
+                foreach (var questionModel in assessmentResultModel.QuestionPaper)
+                {
+                    QuestionEntity questionPaperEntity = new QuestionEntity();
+                    questionPaperEntity.ID = questionModel.ID;
+                    questionPaperEntity.Number = questionModel.Number;
+                    questionPaperEntity.OptionType = questionModel.OptionType;
+                    questionPaperEntity.Options = new List<OptionsEntity>();
+                    questionPaperEntity.SelectedOptionId = questionModel.SelectedOptionId;
+                    questionPaperEntity.WrittenAnswer = questionModel.WrittenAnswer;
+
+                    foreach (var optionModel in questionModel.Options)
+                    {
+                        OptionsEntity optionEntity = new OptionsEntity();
+                        optionEntity.ID = optionModel.ID;
+                        optionEntity.OptionText = optionModel.OptionText;
+                        questionPaperEntity.Options.Add(optionEntity);
+                    }
+                    questionPaperEntity.QuestionText = questionModel.QuestionText;
+                    questionPaperEntity.RightOptionId = questionModel.RightOptionId;
+                    listQuestionPaperEntity.Add(questionPaperEntity);
+
+
+                }
+                assessmentResultEntity.AnsweredSheet = listQuestionPaperEntity;
+
+
+
+                BusinessFactory.CreateQuestionPaperBusinessInstance().SaveAssessmentResultAndAnsweredSheet(assessmentResultEntity);
+
+
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (System.Exception e)
+            {
+
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
+            }
+        }
+
 
 
     }

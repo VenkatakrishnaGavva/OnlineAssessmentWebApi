@@ -10,14 +10,17 @@ namespace OnlineAssessmentApp.Business
     {
         bool QuestionPaperUpload(Stream questionpaper,string description, string questionPaperName);
 
-        List<QuestionEntity> GetQuestionPaperById(int id);
+        AssessmentEntity GetAssessmentById(int id);
 
         List<QuestionPaperDetailsEntity> GetAllQuestionPapersDetails();
 
         List<AssessmentEntity> GetAllAsseementsDetails();
 
-
+        List<UserEntity> GetUsersForAssessmentForEvaluation(int assessement);
         bool CreateAssessment(AssessmentEntity assessmentEntity);
         bool MapAnAssessmentToUser(int userId, int assessmentId);
+        bool SaveAssessmentResultAndAnsweredSheet(AssessmentResultEntity assessmentResultEntity);
+         AssessmentEntity GetAssessmentForEvaluation(int assessmentId, int userid);
+
     }
 }

@@ -70,19 +70,23 @@ namespace OnlineAssessmentApp.Business
             }
             return listQuestionPaperDetailsEntity;
         }
-        public List<QuestionEntity> GetQuestionPaperById(int id)
+        public AssessmentEntity GetAssessmentById(int id)
         {
+            AssessmentEntity assessmentEntity = new AssessmentEntity();
             List<QuestionEntity> listQuestionEntity = new List<QuestionEntity>();
             try
             {
-                var result = DataFactory.DataFactory.CreateQuestionPaperRepositoryInstance().GetQuestionPaperById(id);
-               
-                foreach (var questiondata in result)
+                var result = DataFactory.DataFactory.CreateQuestionPaperRepositoryInstance().GetAssessmentById(id);
+                assessmentEntity.QuestionPaperId = result.QuestionPaperId;
+                assessmentEntity.AssessmentId = result.Id;
+                foreach (var questiondata in result.QuestionPaper)
                 {
                     QuestionEntity quesEntity = new QuestionEntity();
                     quesEntity.ID = questiondata.ID;
                     quesEntity.Number = questiondata.Number;
+                    quesEntity.OptionType = questiondata.OptionType;
                     quesEntity.Options = new List<OptionsEntity>();
+
                     int optionID = 100;///option id starts from 100
                     foreach (var optionData in questiondata.Options)
                     {
@@ -93,6 +97,7 @@ namespace OnlineAssessmentApp.Business
                     }
                     quesEntity.QuestionText = questiondata.QuestionText;
                     quesEntity.RightOptionId = questiondata.RightOptionId;
+
                     listQuestionEntity.Add(quesEntity);
                 }
 
@@ -102,10 +107,31 @@ namespace OnlineAssessmentApp.Business
 
                 
             }
-            
-            return listQuestionEntity;
+            assessmentEntity.QuestionPaper = listQuestionEntity;
+         
+
+            return assessmentEntity;
         }
 
+        public List<UserEntity> GetUsersForAssessmentForEvaluation(int assessement)
+        {
+            List<UserEntity> listusers = new List<UserEntity>();
+
+            IQuestionPaperRepository questionPaperRepository = DataFactory.DataFactory.CreateQuestionPaperRepositoryInstance();
+            var usersData = questionPaperRepository.GetUsersForAssessmentForEvaluation(assessement);
+            foreach (var userData in usersData)
+            {
+                UserEntity userEntity = new UserEntity();
+                userEntity.UserId = userData.UserId;
+                userEntity.Username = userData.Username;
+
+                listusers.Add(userEntity);
+            }
+
+
+            return listusers;
+        }
+       
         public bool MapAnAssessmentToUser(int userId, int assessmentId)
         {
             try
@@ -139,6 +165,110 @@ namespace OnlineAssessmentApp.Business
                 
             }
             return uploadSuccess;
+        }
+
+        public bool SaveAssessmentResultAndAnsweredSheet(AssessmentResultEntity assessmentResultEntity)
+        {
+            try
+            {
+                AssessmentResultData assessmentResultData = new AssessmentResultData();
+                assessmentResultData.UserId = assessmentResultEntity.UserId;
+                assessmentResultData.AssessmentId = assessmentResultEntity.AssessmentId;
+                assessmentResultData.QuestionPaperId = assessmentResultEntity.QuestionPaperId;
+                assessmentResultData.CanInsertAssessmentResult = assessmentResultEntity.CanInsertAssessmentResult;
+                int rightAnsweredCount = 0;
+                foreach(var answer in assessmentResultEntity.AnsweredSheet)
+                {
+                   if(answer.SelectedOptionId==answer.RightOptionId)
+                    {
+                        rightAnsweredCount = rightAnsweredCount + 1;
+                    }
+                }
+                assessmentResultData.TotalQuestionsCount = assessmentResultEntity.AnsweredSheet.Count;
+                assessmentResultData.RightAnsweredCount = rightAnsweredCount;
+               
+                List<QuestionPaperData> listQuestionPaperData = new List<QuestionPaperData>();
+
+                 foreach (var questionEntity in assessmentResultEntity.AnsweredSheet)
+                {
+                    QuestionPaperData questionPaperData= new QuestionPaperData();
+                    questionPaperData.ID = questionEntity.ID;
+                    questionPaperData.Number = questionEntity.Number;
+                    questionPaperData.OptionType = questionEntity.OptionType;
+                    questionPaperData.Options = new List<OptionsData>();
+                    questionPaperData.SelectedOptionId = questionEntity.SelectedOptionId;
+                    questionPaperData.WrittenAnswer = questionEntity.WrittenAnswer;
+
+                    foreach (var optionEntity in questionEntity.Options)
+                    {
+                        OptionsData optionData = new OptionsData();
+                        optionData.ID = optionEntity.ID;
+                        optionData.OptionText = optionEntity.OptionText;
+                        questionPaperData.Options.Add(optionData);
+                    }
+                    questionPaperData.QuestionText = questionEntity.QuestionText;
+                    questionPaperData.RightOptionId = questionEntity.RightOptionId;
+                    listQuestionPaperData.Add(questionPaperData);
+
+
+                }
+                assessmentResultData.AnsweredSheet = listQuestionPaperData;
+
+
+               IQuestionPaperRepository questionPaperRepository = DataFactory.DataFactory.CreateQuestionPaperRepositoryInstance();
+                return questionPaperRepository.SaveAssessmentResultAndAnsweredSheet(assessmentResultData);
+
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
+
+        public AssessmentEntity GetAssessmentForEvaluation(int assessmentId, int userid)
+        {
+            AssessmentEntity assessmentEntity = new AssessmentEntity();
+            List<QuestionEntity> listQuestionEntity = new List<QuestionEntity>();
+            try
+            {
+                var result = DataFactory.DataFactory.CreateQuestionPaperRepositoryInstance().GetAssessmentForEvaluation(assessmentId, userid);
+                assessmentEntity.QuestionPaperId = result.QuestionPaperId;
+                assessmentEntity.AssessmentId = result.Id;
+                foreach (var questiondata in result.QuestionPaper)
+                {
+                    QuestionEntity quesEntity = new QuestionEntity();
+                    quesEntity.ID = questiondata.ID;
+                    quesEntity.Number = questiondata.Number;
+                    quesEntity.OptionType = questiondata.OptionType;
+                    quesEntity.WrittenAnswer = questiondata.WrittenAnswer;
+                    quesEntity.Options = new List<OptionsEntity>();
+
+                    int optionID = 100;///option id starts from 100
+                    foreach (var optionData in questiondata.Options)
+                    {
+                        OptionsEntity optionEntity = new OptionsEntity();
+                        optionEntity.ID = optionData.ID;
+                        optionEntity.OptionText = optionData.OptionText;
+                        quesEntity.Options.Add(optionEntity);
+                    }
+                    quesEntity.QuestionText = questiondata.QuestionText;
+                    quesEntity.RightOptionId = questiondata.RightOptionId;
+
+                    listQuestionEntity.Add(quesEntity);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+
+            }
+            assessmentEntity.QuestionPaper = listQuestionEntity;
+
+
+            return assessmentEntity;
+
         }
     }
 }

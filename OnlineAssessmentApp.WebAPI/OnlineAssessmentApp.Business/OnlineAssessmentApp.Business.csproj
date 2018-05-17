@@ -43,6 +43,7 @@
     <Compile Include="AccountManagementBusiness.cs" />
     <Compile Include="Entities\AccountDetailEntity.cs" />
     <Compile Include="Entities\AssessmentEntity.cs" />
+    <Compile Include="Entities\AssessmentResultEntity.cs" />
     <Compile Include="Entities\ModuleEntity.cs" />
     <Compile Include="Entities\ModuleWisePageAccessEntity.cs" />
     <Compile Include="Entities\OptionsEntity.cs" />

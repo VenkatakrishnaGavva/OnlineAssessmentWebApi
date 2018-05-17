@@ -13,7 +13,10 @@ namespace OnlineAssessmentApp.Business.Entities
         public string QuestionText { get; set; }
         public List<OptionsEntity> Options { get; set; }
         public int RightOptionId { get; set; }
+        public int SelectedOptionId { get; set; }
+        public string OptionType { get; set; }
 
+        public string WrittenAnswer { get; set; }
         public QuestionEntity()
         {
             this.Options = new List<OptionsEntity>();

@@ -24,3 +24,17 @@ E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\Onl
 E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\obj\Debug\OnlineAssessmentApp.Business.csproj.CoreCompileInputs.cache
 E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\obj\Debug\OnlineAssessmentApp.Business.dll
 E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\obj\Debug\OnlineAssessmentApp.Business.pdb
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Debug\OnlineAssessmentApp.Business.dll
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Debug\OnlineAssessmentApp.Business.pdb
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Debug\OnlineAssessmentApp.DataFactory.dll
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Debug\OnlineAssessmentApp.Repository.dll
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Debug\LumenWorks.Framework.IO.dll
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Debug\OnlineAssessmentApp.DataFactory.pdb
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Debug\OnlineAssessmentApp.Repository.pdb
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Debug\LumenWorks.Framework.IO.pdb
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\bin\Debug\LumenWorks.Framework.IO.xml
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\obj\Debug\OnlineAssessmentApp.Business.csprojResolveAssemblyReference.cache
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\obj\Debug\OnlineAssessmentApp.Business.csproj.CoreCompileInputs.cache
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\obj\Debug\OnlineAssessmentApp.Business.csproj.CopyComplete
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\obj\Debug\OnlineAssessmentApp.Business.dll
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.Business\obj\Debug\OnlineAssessmentApp.Business.pdb

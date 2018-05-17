@@ -8,6 +8,9 @@ namespace OnlineAssessmentApp.Repository
     {
         public  const string SPQuestionPaperUpload = "Sp_UploadQuestionPaper";
         public const string SPGetQuestionPaper = "SP_GetQuestionPaper";
+        public const string SPGetQuestionPaperForEvaluate = "SP_GetQuestionPaperForEvaluate";
+        public const string SPSaveResultAndAnsweredSheet = "Sp_SaveResultAndAnsweredSheet";
+      
         public const string SPIsValidUser = "SP_LoginCheck";
         public const string SPCreateUser = "Sp_CreateUser";
         public const string MapAnAssessmentToUser = "Sp_MapAnAssessmentToUser";
@@ -20,6 +23,9 @@ namespace OnlineAssessmentApp.Repository
         public const string SpGetAllQuestionPapers = "Sp_GetAllQuestionPapers";
 
         public const string SpGetAllAssessments = "Sp_GetAllAssessments";
+
+        public const string SpGetUsersByAssessmentId = "Sp_GetUsersByAssessmentId";
+  
 
         public const string SpGetAllUsers = "Sp_GetAllUsers";
         public const string SpGetAllRoles = "Sp_GetRoles";

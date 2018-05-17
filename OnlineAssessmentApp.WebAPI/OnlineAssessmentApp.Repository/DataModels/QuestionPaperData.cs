@@ -14,6 +14,8 @@ namespace OnlineAssessmentApp.Repository.DataModels
         public List<OptionsData> Options { get; set; }
         public int RightOptionId { get; set; }
         public string OptionType { get; set; }
+        public string WrittenAnswer { get; set; }
+        public int SelectedOptionId { get; set; }
         public QuestionPaperData()
         {
             this.Options = new List<OptionsData>();

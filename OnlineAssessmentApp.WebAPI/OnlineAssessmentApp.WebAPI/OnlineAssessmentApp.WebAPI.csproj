@@ -263,6 +263,7 @@
     </Compile>
     <Compile Include="Models\AccountDetailModel.cs" />
     <Compile Include="Models\AssessmentModel.cs" />
+    <Compile Include="Models\AssessmentResultModel.cs" />
     <Compile Include="Models\ModuleModel.cs" />
     <Compile Include="Models\ModuleWisePageAccessModel.cs" />
     <Compile Include="Models\OptionsModel.cs" />

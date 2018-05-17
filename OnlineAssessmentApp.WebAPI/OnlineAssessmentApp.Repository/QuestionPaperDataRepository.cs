@@ -35,8 +35,9 @@ namespace OnlineAssessmentApp.Repository
 
         }
 
-        public List<QuestionPaperData> GetQuestionPaperById(int id)
+        public AssessmentData GetAssessmentById(int id)
         {
+            AssessmentData assessmentData = new AssessmentData();
             List<QuestionPaperData> listQuestionPaper = new List<QuestionPaperData>();
 
             IDatabaseHelper objSqlADOHelper = new SqlADOHelper();
@@ -50,7 +51,11 @@ namespace OnlineAssessmentApp.Repository
             var stringReader = new System.IO.StringReader(Convert.ToString(dt.Rows[0].ItemArray[0]));
             var serializer = new XmlSerializer(typeof(List<QuestionPaperData>));
             listQuestionPaper= serializer.Deserialize(stringReader) as List<QuestionPaperData>;
-            return listQuestionPaper;
+
+            assessmentData.QuestionPaper = listQuestionPaper;
+            assessmentData.Id = Convert.ToInt32(dt.Rows[0].ItemArray[1]);
+            assessmentData.QuestionPaperId = Convert.ToInt32(dt.Rows[0].ItemArray[2]);
+            return assessmentData;
         }
 
 
@@ -254,6 +259,108 @@ namespace OnlineAssessmentApp.Repository
 
             }
             return isCreationSucess;
+
+        }
+
+        public bool SaveAssessmentResultAndAnsweredSheet(AssessmentResultData assessmentResultData)
+        {
+            bool isSaveSucess = true;
+            StringBuilder strBuilder = new StringBuilder();
+
+            XmlSerializer serializer = new XmlSerializer(typeof(List<QuestionPaperData>));
+            using (StringWriter textWriter = new StringWriter())
+            {
+                serializer.Serialize(textWriter, assessmentResultData.AnsweredSheet);
+                strBuilder.Append(textWriter.ToString());
+            }
+            string answeredSheetINXML = Convert.ToString(strBuilder);
+            try
+            {
+                IDatabaseHelper objSqlADOHelper = new SqlADOHelper();
+
+
+                SqlParameter[] paramArray = new SqlParameter[8];
+
+                paramArray[0] = RepositoryUtility.AddSQLParameter("@AssessmentId", SqlDbType.Int, ParameterDirection.Input, assessmentResultData.AssessmentId);
+                paramArray[1] = RepositoryUtility.AddSQLParameter("@userid ", SqlDbType.Int, ParameterDirection.Input, assessmentResultData.UserId);
+                paramArray[2] = RepositoryUtility.AddSQLParameter("@TotalQuestionsCount", SqlDbType.Int, ParameterDirection.Input, assessmentResultData.TotalQuestionsCount);
+                paramArray[3] = RepositoryUtility.AddSQLParameter("@RightAnsweredCount", SqlDbType.Int, ParameterDirection.Input, assessmentResultData.RightAnsweredCount);
+                paramArray[4] = RepositoryUtility.AddSQLParameter("@CanInsertAssessmentResult", SqlDbType.Int, ParameterDirection.Input, assessmentResultData.CanInsertAssessmentResult?1:0);
+                paramArray[5] = RepositoryUtility.AddSQLParameter("@questionPaperId", SqlDbType.Int, ParameterDirection.Input, assessmentResultData.QuestionPaperId);
+                paramArray[6] = RepositoryUtility.AddSQLParameter("@answeredSheet", SqlDbType.Xml, ParameterDirection.Input, answeredSheetINXML);
+
+
+                paramArray[7] = RepositoryUtility.AddSQLParameter("@responsemessage", SqlDbType.VarChar, ParameterDirection.Output, null, 500);
+
+                objSqlADOHelper.GetOutputParamValue(paramArray, StoredProcedureNameConstants.SPSaveResultAndAnsweredSheet);
+                string successMessage = Convert.ToString(paramArray[7].Value);
+                if (successMessage.Equals("Success"))
+                {
+                    isSaveSucess = true;
+                }
+                else
+                {
+                    isSaveSucess = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                isSaveSucess = false;
+
+            }
+            return isSaveSucess;
+        }
+
+        public List<UserData> GetUsersForAssessmentForEvaluation(int assessement)
+        {
+            List<UserData> listUserData = new List<UserData>();
+
+            IDatabaseHelper objSqlADOHelper = new SqlADOHelper();
+            SqlParameter[] paramArray = new SqlParameter[2];
+            paramArray[0] = RepositoryUtility.AddSQLParameter("@AssessmentId", SqlDbType.Int, ParameterDirection.Input, assessement);
+
+            paramArray[1] = RepositoryUtility.AddSQLParameter("@responsemessage", SqlDbType.VarChar, ParameterDirection.Output, null, 500);
+
+
+            var dt = objSqlADOHelper.GetData(paramArray, StoredProcedureNameConstants.SpGetUsersByAssessmentId);
+            foreach (DataRow row in dt.Rows)
+            {
+                UserData userData = new UserData();
+                userData.UserId = Convert.ToInt32(row.ItemArray[0]);
+                userData.Username = Convert.ToString(row.ItemArray[1]);
+                listUserData.Add(userData);
+            }
+
+            return listUserData;
+
+
+        
+        }
+
+        public AssessmentData  GetAssessmentForEvaluation(int assessmentId, int userid)
+        {
+            AssessmentData assessmentData = new AssessmentData();
+            List<QuestionPaperData> listQuestionPaper = new List<QuestionPaperData>();
+
+            IDatabaseHelper objSqlADOHelper = new SqlADOHelper();
+
+
+            SqlParameter[] paramArray = new SqlParameter[3];
+            paramArray[0] = RepositoryUtility.AddSQLParameter("@AssessmentId", SqlDbType.VarChar, ParameterDirection.Input, assessmentId);
+            paramArray[1] = RepositoryUtility.AddSQLParameter("@UserId", SqlDbType.VarChar, ParameterDirection.Input, userid);
+
+            paramArray[2] = RepositoryUtility.AddSQLParameter("@responsemessage", SqlDbType.VarChar, ParameterDirection.Output, null, 500);
+
+            var dt = objSqlADOHelper.GetData(paramArray, StoredProcedureNameConstants.SPGetQuestionPaperForEvaluate);
+            var stringReader = new System.IO.StringReader(Convert.ToString(dt.Rows[0].ItemArray[1]));
+            var serializer = new XmlSerializer(typeof(List<QuestionPaperData>));
+            listQuestionPaper = serializer.Deserialize(stringReader) as List<QuestionPaperData>;
+
+            assessmentData.QuestionPaper = listQuestionPaper;
+            assessmentData.QuestionPaperId = Convert.ToInt32(dt.Rows[0].ItemArray[0]);
+           
+            return assessmentData;
 
         }
     }

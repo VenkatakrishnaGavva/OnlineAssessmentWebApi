@@ -12,8 +12,11 @@ namespace OnlineAssessmentApp.WebAPI.Models
         public string QuestionText { get; set; }
         public List<OptionsModel> Options { get; set; }
         public int RightOptionId { get; set; }
+        public string OptionType { get; set; }
 
-       public QuestionModel()
+        public string WrittenAnswer { get; set; }
+        public int SelectedOptionId { get; set; }
+        public QuestionModel()
         {
             this.Options = new List<OptionsModel>();
         }
