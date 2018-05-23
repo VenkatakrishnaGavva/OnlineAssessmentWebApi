@@ -279,7 +279,7 @@ namespace OnlineAssessmentApp.Repository
                 IDatabaseHelper objSqlADOHelper = new SqlADOHelper();
 
 
-                SqlParameter[] paramArray = new SqlParameter[8];
+                SqlParameter[] paramArray = new SqlParameter[9];
 
                 paramArray[0] = RepositoryUtility.AddSQLParameter("@AssessmentId", SqlDbType.Int, ParameterDirection.Input, assessmentResultData.AssessmentId);
                 paramArray[1] = RepositoryUtility.AddSQLParameter("@userid ", SqlDbType.Int, ParameterDirection.Input, assessmentResultData.UserId);
@@ -288,12 +288,14 @@ namespace OnlineAssessmentApp.Repository
                 paramArray[4] = RepositoryUtility.AddSQLParameter("@CanInsertAssessmentResult", SqlDbType.Int, ParameterDirection.Input, assessmentResultData.CanInsertAssessmentResult?1:0);
                 paramArray[5] = RepositoryUtility.AddSQLParameter("@questionPaperId", SqlDbType.Int, ParameterDirection.Input, assessmentResultData.QuestionPaperId);
                 paramArray[6] = RepositoryUtility.AddSQLParameter("@answeredSheet", SqlDbType.Xml, ParameterDirection.Input, answeredSheetINXML);
+                paramArray[7] = RepositoryUtility.AddSQLParameter("@IsWriteLaterFlag", SqlDbType.Int, ParameterDirection.Input, assessmentResultData.IsWriteAssessmentLater?1:0);
 
-
-                paramArray[7] = RepositoryUtility.AddSQLParameter("@responsemessage", SqlDbType.VarChar, ParameterDirection.Output, null, 500);
+                 
+                
+                paramArray[8] = RepositoryUtility.AddSQLParameter("@responsemessage", SqlDbType.VarChar, ParameterDirection.Output, null, 500);
 
                 objSqlADOHelper.GetOutputParamValue(paramArray, StoredProcedureNameConstants.SPSaveResultAndAnsweredSheet);
-                string successMessage = Convert.ToString(paramArray[7].Value);
+                string successMessage = Convert.ToString(paramArray[8].Value);
                 if (successMessage.Equals("Success"))
                 {
                     isSaveSucess = true;

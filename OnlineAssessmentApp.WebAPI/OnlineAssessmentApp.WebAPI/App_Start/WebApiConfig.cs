@@ -13,7 +13,7 @@ namespace OnlineAssessmentApp.WebAPI
         private static string GetAllowedOrigins()
         {
             //Make a call to the database to get allowed origins and convert to a comma separated string
-            return "https://onlineassessmentangular.azurewebsites.net,http://localhost:4200";
+            return "https://onlineassessmentangular.azurewebsites.net,http://localhost:4200,http://venkatgazure-001-site1.itempurl.com";
         }
         public static void Register(HttpConfiguration config)
         {

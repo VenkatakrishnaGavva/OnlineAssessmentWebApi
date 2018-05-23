@@ -21,6 +21,7 @@ using System.Web.Http.Results;
 
 namespace OnlineAssessmentApp.WebAPI.Controllers
 {
+   
     public class QuestionPaper
     {
       
@@ -36,6 +37,7 @@ namespace OnlineAssessmentApp.WebAPI.Controllers
 
         public int AssessmentId { get; set; }
     }
+    [Authorize]
     public class QuestionPaperController : ApiController
     {
         [Route("api/GetQuestionPaper")]
@@ -176,13 +178,14 @@ namespace OnlineAssessmentApp.WebAPI.Controllers
                   
         [HttpPost]
         [Route("api/fileupload")]
-        public async Task<HttpResponseMessage> PostFormData(string Description,string QuestionPaperName)
+        public async Task<HttpResponseMessage> PostFormData()
         {
            
             try
             {
-
-                BusinessFactory.CreateQuestionPaperBusinessInstance().QuestionPaperUpload(HttpContext.Current.Request.Files[0].InputStream, Description,QuestionPaperName);
+                
+                var questionPaper = JsonConvert.DeserializeObject<QuestionPaper>(HttpContext.Current.Request.Form[0]);
+                BusinessFactory.CreateQuestionPaperBusinessInstance().QuestionPaperUpload(HttpContext.Current.Request.Files[0].InputStream, questionPaper.Description, questionPaper.QuestionPaperName);
 
 
                return Request.CreateResponse(HttpStatusCode.OK);
@@ -223,6 +226,7 @@ namespace OnlineAssessmentApp.WebAPI.Controllers
                 assessmentResultEntity.QuestionPaperId = assessmentResultModel.QuestionPaperId;
                 assessmentResultEntity.TotalQuestionsCount = assessmentResultModel.TotalQuestionsCount;
                 assessmentResultEntity.RightAnsweredCount = assessmentResultModel.RightAnsweredCount;
+                assessmentResultEntity.IsWriteAssessmentLater = assessmentResultModel.IsWriteAssessmentLater;
                 List<QuestionEntity> listQuestionPaperEntity = new List<QuestionEntity>();
 
                 foreach (var questionModel in assessmentResultModel.QuestionPaper)

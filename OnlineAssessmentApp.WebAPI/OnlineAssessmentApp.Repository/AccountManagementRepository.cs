@@ -11,7 +11,7 @@ namespace OnlineAssessmentApp.Repository
 {
     public class AccountManagementRepository : IAccountManagementRepository
     {
-        public AccountDetailsData AccountDetails { get; set; }
+        public UserData AccountDetails { get; set; }
 
         public bool CreateModule(ModuleData moduleData)
         {
@@ -337,7 +337,7 @@ namespace OnlineAssessmentApp.Repository
             return listmodulewisePageAccessData;
         }
 
-        public bool IsValidUser(AccountDetailsData accountDetailsData)
+        public bool IsValidUser(UserData accountDetailsData)
         {
             try
             {
@@ -345,23 +345,31 @@ namespace OnlineAssessmentApp.Repository
                 IDatabaseHelper objSqlADOHelper = new SqlADOHelper();
                
 
-                SqlParameter[] paramArray = new SqlParameter[5];
+                SqlParameter[] paramArray = new SqlParameter[3];
 
-                paramArray[0] = RepositoryUtility.AddSQLParameter("@username", SqlDbType.VarChar, ParameterDirection.Input, accountDetailsData.UserName);
+                paramArray[0] = RepositoryUtility.AddSQLParameter("@username", SqlDbType.VarChar, ParameterDirection.Input, accountDetailsData.Username);
                 paramArray[1] = RepositoryUtility.AddSQLParameter("@password", SqlDbType.VarChar, ParameterDirection.Input, accountDetailsData.Password);
-                paramArray[2] = RepositoryUtility.AddSQLParameter("@userid", SqlDbType.Int, ParameterDirection.Output);
-                paramArray[3] = RepositoryUtility.AddSQLParameter("@RoleId", SqlDbType.Int, ParameterDirection.Output);
-               
-                paramArray[4] = RepositoryUtility.AddSQLParameter("@responsemessage", SqlDbType.VarChar, ParameterDirection.Output,null, 500);
+                 
+                paramArray[2] = RepositoryUtility.AddSQLParameter("@responsemessage", SqlDbType.VarChar, ParameterDirection.Output,null, 500);
 
-                objSqlADOHelper.GetOutputParamValue(paramArray, StoredProcedureNameConstants.SPIsValidUser);
-                string successMessage = Convert.ToString(paramArray[4].Value);
+                DataTable dtusers =  objSqlADOHelper.GetData(paramArray, StoredProcedureNameConstants.SPIsValidUser);
+                string successMessage = Convert.ToString(paramArray[2].Value);
                 if(successMessage.Equals("User successfully logged in"))
                     {
-                    accountDetailsData.UserID =Convert.ToInt32(paramArray[2].Value);
-                    accountDetailsData.RoleId = Convert.ToInt32(paramArray[3].Value);
                     isValidUser = true;
-                   }
+                    foreach (DataRow row in dtusers.Rows)
+                    {
+                        accountDetailsData.UserId = Convert.ToInt32(row.ItemArray[0]);
+                        accountDetailsData.Username = Convert.ToString(row.ItemArray[1]);
+                        accountDetailsData.Role = new RoleData();
+
+                        accountDetailsData.Role.RoleId = Convert.ToInt32(row.ItemArray[2]);
+                        accountDetailsData.ProfilePicPath = Convert.ToString(row.ItemArray[3]);
+
+                    }
+
+
+                }
                 else
                 {
                     isValidUser = false;
@@ -481,7 +489,7 @@ namespace OnlineAssessmentApp.Repository
                 IDatabaseHelper objSqlADOHelper = new SqlADOHelper();
 
 
-                SqlParameter[] paramArray = new SqlParameter[8];
+                SqlParameter[] paramArray = new SqlParameter[9];
                 paramArray[0] = RepositoryUtility.AddSQLParameter("@userid", SqlDbType.Int, ParameterDirection.Input, userData.UserId);
                 paramArray[1] = RepositoryUtility.AddSQLParameter("@username", SqlDbType.VarChar, ParameterDirection.Input, userData.Username);
                 paramArray[2] = RepositoryUtility.AddSQLParameter("@EmailAddress", SqlDbType.VarChar, ParameterDirection.Input, userData.EmailAddress);
@@ -489,7 +497,10 @@ namespace OnlineAssessmentApp.Repository
                 paramArray[4] = RepositoryUtility.AddSQLParameter("@LastName", SqlDbType.VarChar, ParameterDirection.Input, userData.LastName);
                 paramArray[5] = RepositoryUtility.AddSQLParameter("@ModifiedBy", SqlDbType.VarChar, ParameterDirection.Input, userData.ModifiedBy);
                 paramArray[6] = RepositoryUtility.AddSQLParameter("@roleid", SqlDbType.Int, ParameterDirection.Input, (object)userData.Role.RoleId ?? DBNull.Value);
-                paramArray[7] = RepositoryUtility.AddSQLParameter("@responsemessage", SqlDbType.VarChar, ParameterDirection.Output, null, 500);
+                paramArray[7] = RepositoryUtility.AddSQLParameter("@ProfilePicPath", SqlDbType.VarChar, ParameterDirection.Input, userData.ProfilePicPath);
+
+
+                paramArray[8] = RepositoryUtility.AddSQLParameter("@responsemessage", SqlDbType.VarChar, ParameterDirection.Output, null, 500);
 
                 objSqlADOHelper.GetOutputParamValue(paramArray, StoredProcedureNameConstants.SPUpdateUser);
                 string successMessage = Convert.ToString(paramArray[8].Value);

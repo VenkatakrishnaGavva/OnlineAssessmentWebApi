@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="OnlineAssessmentAppNew" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Web\ API\\OnlineAssessmentAppWebAPI\\OnlineAssessmentApp\.WebAPI\\OnlineAssessmentApp\.WebAPI\\obj\\Release\\Package\\PackageTmp$" />
-    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Web\ API\\OnlineAssessmentAppWebAPI\\OnlineAssessmentApp\.WebAPI\\OnlineAssessmentApp\.WebAPI\\obj\\Release\\Package\\PackageTmp$" />
+  <parameter name="IIS Web Application Name" description="" value="venkatgavva-001-site1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\AngularAppSample\\OnlineAssessmentWebApi\\OnlineAssessmentApp\.WebAPI\\OnlineAssessmentApp\.WebAPI\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\AngularAppSample\\OnlineAssessmentWebApi\\OnlineAssessmentApp\.WebAPI\\OnlineAssessmentApp\.WebAPI\\obj\\Release\\Package\\PackageTmp$" />
   </parameter>
 </parameters>

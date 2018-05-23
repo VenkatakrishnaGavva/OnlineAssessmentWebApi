@@ -97,7 +97,7 @@ namespace OnlineAssessmentApp.Business
                     }
                     quesEntity.QuestionText = questiondata.QuestionText;
                     quesEntity.RightOptionId = questiondata.RightOptionId;
-
+                    quesEntity.WrittenAnswer = questiondata.WrittenAnswer;
                     listQuestionEntity.Add(quesEntity);
                 }
 
@@ -176,6 +176,7 @@ namespace OnlineAssessmentApp.Business
                 assessmentResultData.AssessmentId = assessmentResultEntity.AssessmentId;
                 assessmentResultData.QuestionPaperId = assessmentResultEntity.QuestionPaperId;
                 assessmentResultData.CanInsertAssessmentResult = assessmentResultEntity.CanInsertAssessmentResult;
+                assessmentResultData.IsWriteAssessmentLater = assessmentResultEntity.IsWriteAssessmentLater;
                 int rightAnsweredCount = 0;
                 foreach(var answer in assessmentResultEntity.AnsweredSheet)
                 {

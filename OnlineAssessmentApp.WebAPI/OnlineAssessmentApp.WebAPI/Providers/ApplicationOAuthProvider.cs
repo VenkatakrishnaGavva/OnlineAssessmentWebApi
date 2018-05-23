@@ -42,11 +42,11 @@ namespace OnlineAssessmentApp.WebAPI.Providers
             //}
 
             IAccountManagementBusiness objAccountManagementBusiness =  BusinessFactory.CreateAccountManagementBusinessInstance();
-            AccountDetailModel accountDetailModel = new AccountDetailModel();
-            AccountDetailEntity accountDetailEntity = new AccountDetailEntity();
-            accountDetailEntity.UserName = context.UserName;
+            UserModel accountDetailModel = new UserModel();
+            UserEntity accountDetailEntity = new UserEntity();
+            accountDetailEntity.Username = context.UserName;
             accountDetailEntity.Password = context.Password;
-            accountDetailEntity.AccessCode = context.Password;
+
            
             if (!objAccountManagementBusiness.IsValidUser(accountDetailEntity))
             {
@@ -63,7 +63,7 @@ namespace OnlineAssessmentApp.WebAPI.Providers
             ClaimsIdentity cookiesIdentity =
             new ClaimsIdentity(context.Options.AuthenticationType);
 
-            AuthenticationProperties properties = CreateProperties(context.UserName, Convert.ToString(accountDetailEntity.UserID), Convert.ToString(accountDetailEntity.RoleId));
+            AuthenticationProperties properties = CreateProperties(context.UserName, Convert.ToString(accountDetailEntity.UserId), Convert.ToString(accountDetailEntity.Role.RoleId), Convert.ToString(@"content/profilepics/"+accountDetailEntity.ProfilePicPath));
             AuthenticationTicket ticket =
             new AuthenticationTicket(oAuthIdentity, properties);
             context.Validated(ticket);
@@ -110,14 +110,15 @@ namespace OnlineAssessmentApp.WebAPI.Providers
             return Task.FromResult<object>(null);
         }
 
-        public static AuthenticationProperties CreateProperties(string userName,string userid,string RoleId)
+        public static AuthenticationProperties CreateProperties(string userName,string userid,string RoleId,string profilePicPath)
         {
             IDictionary<string, string>
             data = new Dictionary<string, string>
             {
                 { "userName", userName },
                 { "userid", userid},
-                 { "RoleId", RoleId}
+                 { "RoleId", RoleId},
+                {"ProfilePicPath", profilePicPath}
 
             };
             return new AuthenticationProperties(data);

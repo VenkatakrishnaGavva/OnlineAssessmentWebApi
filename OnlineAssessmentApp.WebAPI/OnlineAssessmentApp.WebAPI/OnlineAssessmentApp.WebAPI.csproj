@@ -35,6 +35,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -261,7 +262,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountDetailModel.cs" />
     <Compile Include="Models\AssessmentModel.cs" />
     <Compile Include="Models\AssessmentResultModel.cs" />
     <Compile Include="Models\ModuleModel.cs" />
@@ -343,6 +343,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\ProfilePics\" />
+    <Folder Include="ProfilePics\" />
     <Folder Include="Views\AccountManagement\" />
     <Folder Include="Views\AccountMangement\" />
     <Folder Include="Views\QuestionPaper\" />

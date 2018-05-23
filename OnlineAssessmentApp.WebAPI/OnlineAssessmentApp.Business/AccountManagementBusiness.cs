@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using OnlineAssessmentApp.Business.Entities;
 using OnlineAssessmentApp.Repository.DataModels;
 using OnlineAssessmentApp.Repository;
+using System.IO;
 
 namespace OnlineAssessmentApp.Business
 {
     public class AccountManagementBusiness : IAccountManagementBusiness
     {
-        public AccountDetailEntity AccountDetails { get; set; }
+        public UserEntity AccountDetails { get; set; }
 
         public bool CreateModule(ModuleEntity moduleEntity)
         {
@@ -189,21 +190,23 @@ namespace OnlineAssessmentApp.Business
             return listModuleWisePageAccessEntity;
         }
 
-        public bool IsValidUser(AccountDetailEntity accountDetails)
+        public bool IsValidUser(UserEntity accountDetails)
         {
             bool isValidUser = false;
             try
             {
-                AccountDetailsData accountdetaailsData = new AccountDetailsData();
-                accountdetaailsData.UserName = accountDetails.UserName;
+                UserData accountdetaailsData = new UserData();
+                accountdetaailsData.Username = accountDetails.Username;
                 accountdetaailsData.Password = accountDetails.Password;
-                accountdetaailsData.AccessCode = accountDetails.AccessCode;
+          
                 IAccountManagementRepository accountRepository = DataFactory.DataFactory.CreateAccountmanagementRepositoryInstance();
                 if (accountRepository.IsValidUser(accountdetaailsData))
                 {
                     //accountDetails.UserID = accountRepository.AccountDetails.UserID;
-                    accountDetails.UserID = accountdetaailsData.UserID;
-                    accountDetails.RoleId = accountdetaailsData.RoleId;
+                    accountDetails.UserId = accountdetaailsData.UserId;
+                    accountDetails.Role = new RoleEntity();
+                    accountDetails.Role.RoleId  = accountdetaailsData.Role.RoleId;
+                    accountDetails.ProfilePicPath = accountdetaailsData.ProfilePicPath;
                     isValidUser = true;
                 }
                 else
@@ -221,6 +224,8 @@ namespace OnlineAssessmentApp.Business
 
 
         }
+
+      
 
         public bool MapModuleWisePageAccessWithRole(List<ModuleWisePageAccessEntity> listModulewisePermissionEntity)
         {
@@ -269,6 +274,7 @@ namespace OnlineAssessmentApp.Business
         {
             try
             {
+            
                 UserData userData = new UserData();
                 userData.UserId = userEntity.UserId;
                 userData.Username = userEntity.Username;
@@ -280,6 +286,7 @@ namespace OnlineAssessmentApp.Business
                 userData.Role = new RoleData();
 
                 userData.Role.RoleId = userEntity.Role.RoleId;
+                userData.ProfilePicPath = userEntity.ProfilePicPath;
                 IAccountManagementRepository accountRepository = DataFactory.DataFactory.CreateAccountmanagementRepositoryInstance();
                 return accountRepository.UpdateUser(userData);
 

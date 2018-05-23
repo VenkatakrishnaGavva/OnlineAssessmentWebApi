@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountManagementRepository.cs" />
-    <Compile Include="DataModels\AccountMangementData.cs" />
     <Compile Include="DataModels\AssessmentData.cs" />
     <Compile Include="DataModels\AssessmentResultData.cs" />
     <Compile Include="DataModels\ModuleData.cs" />

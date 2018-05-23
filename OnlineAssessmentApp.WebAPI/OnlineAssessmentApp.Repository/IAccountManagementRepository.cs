@@ -9,8 +9,8 @@ namespace OnlineAssessmentApp.Repository
 {
    public  interface IAccountManagementRepository
     {
-        bool IsValidUser(AccountDetailsData accountMangementData);
-        AccountDetailsData AccountDetails { get; set; }
+        bool IsValidUser(UserData accountMangementData);
+        UserData AccountDetails { get; set; }
         bool CreateUser(UserData userData);
         
         bool CreateModule(ModuleData moduleData);

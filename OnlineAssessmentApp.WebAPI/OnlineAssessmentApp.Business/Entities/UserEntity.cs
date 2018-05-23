@@ -15,7 +15,7 @@ namespace OnlineAssessmentApp.Business.Entities
         public string EmailAddress { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-
+        public string ProfilePicPath { get; set; }
         public int CreatedBy { get; set; }
         public int ModifiedBy { get; set; }
         public RoleEntity Role { get; set; }

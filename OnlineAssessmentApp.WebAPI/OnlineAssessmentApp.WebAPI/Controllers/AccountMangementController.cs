@@ -1,18 +1,25 @@
-﻿using OnlineAssessmentapp.BusinessFactory;
+﻿using Newtonsoft.Json;
+using OnlineAssessmentapp.BusinessFactory;
 using OnlineAssessmentApp.Business.Entities;
 using OnlineAssessmentApp.WebAPI.Models;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Hosting;
 using System.Web.Http;
 
 
 namespace OnlineAssessmentApp.WebAPI.Controllers
 {
+   [Authorize]
     public class AccountMangementController : ApiController
     {
         [HttpGet]
@@ -234,11 +241,14 @@ namespace OnlineAssessmentApp.WebAPI.Controllers
 
            [HttpPost]
         [Route("api/UpdateUser")]
-        public async Task<HttpResponseMessage> UpdateUser(UserModel user)
+        public async Task<HttpResponseMessage> UpdateUser()
         {
 
             try
             {
+             
+               
+                var user = JsonConvert.DeserializeObject<UserEntity>(HttpContext.Current.Request.Form[0]);
                 UserEntity userEntity = new UserEntity();
                 userEntity.UserId = user.UserId;
                 userEntity.Username = user.Username;
@@ -249,7 +259,12 @@ namespace OnlineAssessmentApp.WebAPI.Controllers
                 userEntity.ModifiedBy = user.ModifiedBy;
                 userEntity.Role = new RoleEntity();
 
-                userEntity.Role.RoleId =  user.Role.RoleId;
+                userEntity.Role.RoleId = user.Role.RoleId;
+                var postedFile = HttpContext.Current.Request.Files[0].FileName;
+                userEntity.ProfilePicPath =  Guid.NewGuid().ToString() + postedFile ;
+                var filePath = HttpContext.Current.Server.MapPath("~") + @"Content\ProfilePics\" + userEntity.ProfilePicPath;
+         
+                HttpContext.Current.Request.Files[0].SaveAs(filePath);
 
                 BusinessFactory.CreateAccountManagementBusinessInstance().UpdateUser(userEntity);
 
@@ -259,10 +274,31 @@ namespace OnlineAssessmentApp.WebAPI.Controllers
             catch (System.Exception e)
             {
 
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e.StackTrace);
             }
         }
-
+        [Route("api/GetImage")]
+        public async Task<HttpResponseMessage> GetImage(string imageFileName)
+        {
+            try
+            {
+                
+                var result = new HttpResponseMessage(HttpStatusCode.OK);
+                var filePath = HttpContext.Current.Server.MapPath("~") + imageFileName;
+                FileStream fileStream = new FileStream(filePath, FileMode.Open);
+                Image image = Image.FromStream(fileStream);
+                MemoryStream memoryStream = new MemoryStream();
+                image.Save(memoryStream, ImageFormat.Jpeg);
+                fileStream.Close();
+                result.Content = new ByteArrayContent(memoryStream.ToArray());
+                result.Content.Headers.ContentType = new MediaTypeHeaderValue("image/jpg");
+                return result;
+            }
+            catch(Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.StackTrace);
+            }
+        }
         [HttpPost]
         [Route("api/CreateUser")]
         public async Task<HttpResponseMessage> CreateUser(UserModel user)

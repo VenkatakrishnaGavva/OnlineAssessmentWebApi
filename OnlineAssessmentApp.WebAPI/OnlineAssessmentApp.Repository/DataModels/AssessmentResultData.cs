@@ -24,5 +24,7 @@ namespace OnlineAssessmentApp.Repository.DataModels
 
         public int RightAnsweredCount { get; set; }
         public bool CanInsertAssessmentResult { get; set; }
+
+        public bool IsWriteAssessmentLater { get; set; }
     }
 }

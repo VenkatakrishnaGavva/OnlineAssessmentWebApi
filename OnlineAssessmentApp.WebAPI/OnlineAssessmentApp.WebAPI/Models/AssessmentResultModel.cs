@@ -13,7 +13,9 @@ namespace OnlineAssessmentApp.WebAPI.Models
                 this.QuestionPaper = new List<QuestionModel>();
 
             }
-            public int AssessmentId { get; set; }
+
+        public bool IsWriteAssessmentLater { get; set; }
+        public int AssessmentId { get; set; }
 
             public int QuestionPaperId { get; set; }
 

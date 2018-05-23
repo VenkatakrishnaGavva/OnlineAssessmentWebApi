@@ -14,7 +14,8 @@ namespace OnlineAssessmentApp.WebAPI.Models
         public string EmailAddress { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-
+        public string ProfilePicPath { get; set; }
+        public HttpPostedFileBase file { get; set; }
         public int CreatedBy { get; set; }
         public int ModifiedBy { get; set; }
         public RoleModel Role { get; set; }

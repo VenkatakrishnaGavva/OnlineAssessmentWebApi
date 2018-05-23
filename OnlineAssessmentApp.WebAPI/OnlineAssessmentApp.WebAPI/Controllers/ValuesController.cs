@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Http;
 
 namespace OnlineAssessmentApp.WebAPI.Controllers
@@ -20,11 +22,13 @@ namespace OnlineAssessmentApp.WebAPI.Controllers
         {
             return new string[] { "value1", "value2" };
         }
-        [HttpPut]
-        [Route("api/Samplepatch")]
-        public async Task<HttpResponseMessage> SamplePatch(SampleModel sample)
+        // GET api/values
+        [Route("api/GetServerMapPath")]
+        public string  GetServerMapPath()
         {
-            return Request.CreateResponse(HttpStatusCode.OK);
+            string path = HttpContext.Current.Server.MapPath("~") + @"Content\ProfilePics\";
+
+            return path;
         }
         // GET api/values/5
         public string Get(int id)

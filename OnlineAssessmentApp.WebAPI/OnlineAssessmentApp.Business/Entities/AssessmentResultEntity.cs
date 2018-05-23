@@ -15,8 +15,9 @@ namespace OnlineAssessmentApp.Business.Entities
 
             }
             public int AssessmentId { get; set; }
+        public bool IsWriteAssessmentLater { get; set; }
 
-            public int QuestionPaperId { get; set; }
+        public int QuestionPaperId { get; set; }
 
             public List<QuestionEntity> AnsweredSheet { get; set; }
             public int UserId { get; set; }

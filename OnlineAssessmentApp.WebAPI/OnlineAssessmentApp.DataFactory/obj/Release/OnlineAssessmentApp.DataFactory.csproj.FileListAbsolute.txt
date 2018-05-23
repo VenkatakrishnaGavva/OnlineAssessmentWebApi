@@ -20,3 +20,15 @@ E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\Onl
 E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\obj\Release\OnlineAssessmentApp.DataFactory.csproj.CoreCompileInputs.cache
 E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\obj\Release\OnlineAssessmentApp.DataFactory.dll
 E:\Users\vasu\source\repos\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\obj\Release\OnlineAssessmentApp.DataFactory.pdb
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Release\OnlineAssessmentApp.DataFactory.dll
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Release\OnlineAssessmentApp.DataFactory.pdb
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Release\OnlineAssessmentApp.Repository.dll
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Release\LumenWorks.Framework.IO.dll
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Release\OnlineAssessmentApp.Repository.pdb
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Release\LumenWorks.Framework.IO.pdb
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\bin\Release\LumenWorks.Framework.IO.xml
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\obj\Release\OnlineAssessmentApp.DataFactory.csprojResolveAssemblyReference.cache
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\obj\Release\OnlineAssessmentApp.DataFactory.csproj.CoreCompileInputs.cache
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\obj\Release\OnlineAssessmentApp.DataFactory.csproj.CopyComplete
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\obj\Release\OnlineAssessmentApp.DataFactory.dll
+C:\AngularAppSample\OnlineAssessmentWebApi\OnlineAssessmentApp.WebAPI\OnlineAssessmentApp.DataFactory\obj\Release\OnlineAssessmentApp.DataFactory.pdb
